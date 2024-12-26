@@ -7,6 +7,9 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Type;
 
+use App\Utils\Database;
+use PDO;
+
 class MainController extends CoreController
 {
 
@@ -41,4 +44,17 @@ class MainController extends CoreController
         // Affiche la vue dans le dossier views
         $this->show('mentions');
     }
+    public function productList()
+    {
+        // Ici on créer une instance de la classe Product (donc le model Product)
+        $productModel = new Product();
+        // Ici on stocke la liste de tous les produits grâce à notre méthode findAll()
+        $products = $productModel->findAll();
+        // Ici j'affiche tout simplement la liste des products grâce à dump
+        dump($products);
+        $this->show('product_list', [
+            'products' => $products
+        ]);
+    }
+    
 }
