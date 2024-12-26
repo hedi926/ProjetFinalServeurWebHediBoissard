@@ -28,11 +28,21 @@ class MainController extends CoreController
     {
         // Ci dessous je créer une instance du model Category
         $categoryModel = new Category();
+        // Ci dessous je créer une instance du model Brand
+        $brandModel = new Brand();
+        // Ci dessous je créer une instance du model ProductTypes
+        $typeModel = new Type();
         // Ensuite j'execute la fonction findAllForHomePage() du model Category
         $categories = $categoryModel->findAllForHomePage();
         // dump($categories);
+        // Ensuite j'execute la fonction findAllForHomePage() du model Brand
+        $brands = $brandModel->findAll();
+        // Ensuite j'execute la fonction findAllForHomePage() du model ProductTypes
+        $types = $typeModel->findAll();
         $this->show('home', [
-            'categories' => $categories
+            'categories' => $categories,
+            'brands' => $brands,
+            'types' => $types
         ]);
     }
 

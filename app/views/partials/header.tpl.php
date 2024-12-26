@@ -58,6 +58,7 @@
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Types de produits</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <?php foreach($types as $currentType): ?>
+                    <!-- <a class="dropdown-item" href="<?=$absoluteURL.'/catalogue/type/'.$currentType->getId()?>"><?=$currentType->getName()?></a> -->
                     <a class="dropdown-item" href="<?=$router->generate('catalog-type', ['id' => $currentType->getId()])?>"><?=$currentType->getName()?></a>
                   <?php endforeach ?>
                 </div>
@@ -68,7 +69,8 @@
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Marques</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <?php foreach($brands as $currentBrand): ?>
-                    <a class="dropdown-item" href="<?=$router->generate('catalog-brand', ['id' => $currentBrand->getId()])?>"><?=$currentBrand->getName()?></a>
+                   <!-- <a class="dropdown-item" href="<?=$absoluteURL.'/catalogue/brand/'.$currentBrand->getId()?>"><?=$currentBrand->getName()?></a> -->
+                   <a class="dropdown-item" href="<?=$router->generate('catalog-brand', ['id' => $currentBrand->getId()])?>"><?=$currentBrand->getName()?></a>
                   <?php endforeach ?>
                 </div>
               </div>
